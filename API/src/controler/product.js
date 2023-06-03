@@ -18,6 +18,7 @@ export const addProduct = async (req, res) => {
     });
   }
 };
+
 export const updateProduct = async (req, res) => {
   try {
     const id = req.params.id;
@@ -26,9 +27,9 @@ export const updateProduct = async (req, res) => {
       new: true,
     });
     if (!data) {
-      return res.status(400).json({ message: "Cap nhap that bai" });
+      return res.status(400).json({ message: "Cập nhập thất bại" });
     }
-    return res.json({ message: "Cap nhap thanh cong" }, data);
+    return res.json({ message: "Cập nhập thành công" }, data);
   } catch (error) {
     return res.json({
       message: error.message,

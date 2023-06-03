@@ -4,6 +4,6 @@ import { addProduct, updateProduct } from "../controler/product";
 const router = express.Router();
 
 router.post("/products", addProduct);
-router.put("/products", updateProduct);
+router.put("/products/:id", updateProduct);
 
 export default router;
