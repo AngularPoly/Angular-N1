@@ -1,7 +1,7 @@
 import auth from "../model/auth";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { checkUse } from "../schemas/auth";
+import { checkUse, validatesignin } from "../schemas/auth";
 export const Signup = async (req, res) => {
   try {
     const { error } = checkUse.validate(req.body, { abortEarly: false });
@@ -40,6 +40,13 @@ export const Signup = async (req, res) => {
 
 export const Signin = async (req, res) => {
   try {
+    const { error } = validatesignin.validate(req.body, { abortEarly: false });
+    if (error) {
+      const errors = error.details.map((err) => err.message);
+      return res.status(400).json({
+        message: errors,
+      });
+    }
     const { email, password } = req.body
     const user = await auth.findOne({ email })
     if (!user) {
