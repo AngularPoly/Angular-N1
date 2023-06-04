@@ -1,5 +1,32 @@
 import category from "../model/category";
 
+
+export const getAllCategory = async (req, res) => {
+  try {
+    const data = await category.find();
+    if (data.length == 0) {
+      return res.status(400).json({ message: "không có sản phẩm nào" });
+    }
+    return res.status(200).json(data);
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+};
+
+
+export const getOneCategory = async (req, res) => {
+  try {
+    const data = await category.find();
+    if (!data) {
+      return res.status(400).json({ message: "không có sản phẩm nào" });
+    }
+    return res.status(200).json({ message: "lấy sản phẩm thành công", data });
+  } catch (error) {
+    return res.status(400).json({ message: error });
+  }
+};
+
+
 export const addCategory = async (req, res) => {
   try {
     const data = await category.create(req.body);
