@@ -47,3 +47,29 @@ export const removeProduct = async (req, res) => {
     });
   }
 };
+export const getAllProduct = async (req, res) => {
+    try {
+        const data = await product.find();
+        return res.status(200).json({
+            message: "đây là tất cả sản phẩm",
+            data,
+        })
+    } catch (error) {
+        return res.status(400).json({
+            message: "không tìm được"
+        })
+    }
+}
+export const getOneproduct = async (req,res)=>{
+    try {
+        const data = await product.findById(req.params.id);
+        return res.status(200).json({
+            message: "tìm được 1 sản phẩm",
+            data,
+        })
+    } catch (error) {
+        return res.status(400).json({
+            message : "lỗi"
+        })
+    }
+}
