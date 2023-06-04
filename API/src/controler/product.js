@@ -1,7 +1,13 @@
+import category from "../model/category";
 import product from "../model/product";
 export const addProduct = async (req, res) => {
   try {
     const data = await product.create(req.body);
+    await category.findByIdAndUpdate(data.categoryId, {
+      $addToSet: {
+        products: data._id,
+      },
+    });
     if (!data) {
       return res.status(400).json({
         message: "không thêm được sản phẩm",
