@@ -12,3 +12,15 @@ export const addCategory = async (req, res) => {
         return res.status(400).json({ message: error })
     }
 }
+
+export const deleteCategory = async (req, res) => {
+    try {
+        const data = await category.findByIdAndDelete(req.params.id)
+        if (!data) {
+            return res.status(400).json({ message: "không xoá được sản phẩm" })
+        }
+        return res.status(200).json({ message: "xoá sản phẩm thành công", data })
+    } catch (error) {
+        return res.status(400).json({ message: error })
+    }
+}
