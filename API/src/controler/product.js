@@ -36,3 +36,14 @@ export const updateProduct = async (req, res) => {
     });
   }
 };
+export const removeProduct = async (req, res) => {
+  try {
+    const data = await product.findByIdAndDelete(req.params.id);
+    return res.json({ message: "Xóa thành công", data });
+
+  } catch (error) {
+    return res.json({
+      message: error.message,
+    });
+  }
+};
