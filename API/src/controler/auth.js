@@ -1,6 +1,6 @@
 import auth from "../model/auth";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import { checkUse } from "../schemas/auth";
 export const Signup = async (req, res) => {
   try {
@@ -23,7 +23,7 @@ export const Signup = async (req, res) => {
       email: req.body.email,
       password: hashedPassword,
     });
-    const accessToken = jwt.sign({ _id: user._id }, "phuongle", {
+    const accessToken = jwt.sign({ _id: user._id }, "bansach", {
       expiresIn: "1d",
     });
     return res.status(200).json({
@@ -37,3 +37,30 @@ export const Signup = async (req, res) => {
     });
   }
 };
+
+export const Signin = async (req, res) => {
+  try {
+    const { email, password } = req.body
+    const user = await auth.findOne({ email })
+    if (!user) {
+      return res.status(400).json({ message: "tài khaonr không tồn tải" })
+    }
+
+    const comperpass = await bcrypt.compare(password, user.password)
+    if (!comperpass) {
+      return res.status(400).json({ message: "mật khẩu không đúng" })
+    }
+
+    const accsettoken = jwt.sign({ _id: user._id }, "bansach", { expiresIn: "1d" })
+
+    return res.status(200).json({
+      message: "đăng nhập thành công",
+      user,
+      accsettoken
+    })
+  } catch (error) {
+    return res.status(400).json({
+      message: error,
+    });
+  }
+}
