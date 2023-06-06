@@ -9,6 +9,7 @@ import { ClientComponent } from './layout/client/client.component';
 import { CategoryAdminComponent } from './component/category-admin/category-admin.component';
 import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
 import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
+import { SigninComponent } from './layout/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditCategoryComponent } from './component/category-admin/edit-category/
     ClientComponent,
     CategoryAdminComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
