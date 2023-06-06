@@ -7,7 +7,6 @@ import { ClientComponent } from './layout/client/client.component';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
-
     ]
   },
   {
