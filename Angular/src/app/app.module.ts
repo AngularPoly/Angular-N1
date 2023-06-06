@@ -5,14 +5,26 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { AppRoutingModule } from './app-routing.component';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { ClientComponent } from './layout/client/client.component';
+=======
+import { CategoryAdminComponent } from './component/category-admin/category-admin.component';
+import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
+import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
+>>>>>>> 7c849ad6d3f833dbd4887c93e7640243a48d8fea
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AdminComponent,
+<<<<<<< HEAD
     ClientComponent
+=======
+    CategoryAdminComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
+>>>>>>> 7c849ad6d3f833dbd4887c93e7640243a48d8fea
   ],
   imports: [
     BrowserModule,
