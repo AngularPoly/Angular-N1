@@ -5,12 +5,14 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { AppRoutingModule } from './app-routing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientComponent } from './layout/client/client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    AdminComponent
+    AdminComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
