@@ -10,7 +10,7 @@ import { CategoryAdminComponent } from './component/category-admin/category-admi
 import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
 import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
 import { SigninComponent } from './layout/signin/signin.component';
-
+import { HomePageComponent } from './component/home-page/home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +20,11 @@ import { SigninComponent } from './layout/signin/signin.component';
     CategoryAdminComponent,
     AddCategoryComponent,
     EditCategoryComponent,
-    SigninComponent
+    SigninComponent,
+    HomePageComponent
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     HttpClientModule

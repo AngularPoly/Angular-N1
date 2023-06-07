@@ -7,9 +7,11 @@ import { SigninComponent } from './layout/signin/signin.component';
 import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
 import { CategoryAdminComponent } from './component/category-admin/category-admin.component';
 import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
+import { HomePageComponent } from './component/home-page/home-page.component';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
+      { path: "", component: HomePageComponent }
     ]
   },
   {
