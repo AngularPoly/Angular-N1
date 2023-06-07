@@ -13,19 +13,20 @@ import { UpdateProductComponent } from './component/product-admin/update-product
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
+      { path: "signin", component: SigninComponent },
     ]
   },
   {
     path: "admin", component: AdminComponent, children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
-      { path: "signin", component: SigninComponent },
+
       { path: "categorys", component: CategoryAdminComponent },
       { path: "category/edit", component: EditCategoryComponent },
       { path: "category/add", component: AddCategoryComponent },
-      {path: "products", component: ProductAdminComponent},
-      {path:"products/add", component:AddProductComponent},
-      {path:"products/update", component: UpdateProductComponent}
+      { path: "products", component: ProductAdminComponent },
+      { path: "products/add", component: AddProductComponent },
+      { path: "products/update", component: UpdateProductComponent }
 
     ]
   }
