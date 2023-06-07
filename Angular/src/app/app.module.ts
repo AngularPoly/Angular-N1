@@ -10,14 +10,11 @@ import { CategoryAdminComponent } from './component/category-admin/category-admi
 import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
 import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
 import { SigninComponent } from './layout/signin/signin.component';
-<<<<<<< HEAD
 import { ProductAdminComponent } from './component/product-admin/product-admin.component';
 import { AddProductComponent } from './component/product-admin/add-product/add-product.component';
 import { UpdateProductComponent } from './component/product-admin/update-product/update-product.component';
 import { FormsModule } from '@angular/forms';
-=======
 import { HomePageComponent } from './component/home-page/home-page.component';
->>>>>>> style-create-ui-homepage
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,13 +25,10 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     AddCategoryComponent,
     EditCategoryComponent,
     SigninComponent,
-<<<<<<< HEAD
     ProductAdminComponent,
     AddProductComponent,
-    UpdateProductComponent
-=======
+    UpdateProductComponent,
     HomePageComponent
->>>>>>> style-create-ui-homepage
   ],
   imports: [
 
@@ -42,7 +36,7 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
