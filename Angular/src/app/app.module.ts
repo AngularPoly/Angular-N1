@@ -15,6 +15,7 @@ import { AddProductComponent } from './component/product-admin/add-product/add-p
 import { UpdateProductComponent } from './component/product-admin/update-product/update-product.component';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './component/home-page/home-page.component';
+import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     ProductAdminComponent,
     AddProductComponent,
     UpdateProductComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
