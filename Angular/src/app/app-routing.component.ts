@@ -8,6 +8,9 @@ import { ProductAdminComponent } from './component/product-admin/product-admin.c
 import { AddProductComponent } from './component/product-admin/add-product/add-product.component';
 import { UpdateProductComponent } from './component/product-admin/update-product/update-product.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
+import { CategoryAdminComponent } from './component/category-admin/category-admin.component';
+import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
+import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
@@ -21,7 +24,10 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "products", component: ProductAdminComponent },
       { path: "products/add", component: AddProductComponent },
-      { path: "products/update", component: UpdateProductComponent }
+      { path: "products/update", component: UpdateProductComponent },
+      { path: "categorys", component: CategoryAdminComponent },
+      { path: "categoeys/add", component: AddCategoryComponent },
+      { path: "categorys/update/:id", component: EditCategoryComponent }
     ]
   }
 ]

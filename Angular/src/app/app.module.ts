@@ -31,12 +31,10 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     HomePageComponent
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
