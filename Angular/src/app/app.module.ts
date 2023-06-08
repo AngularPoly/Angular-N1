@@ -36,7 +36,7 @@ import { ProductPageComponent } from './component/product-page/product-page.comp
     UpdateProductComponent,
     HomePageComponent,
 
-    SignupComponent
+    SignupComponent,
 
     ProductDetailComponent,
     ProductPageComponent
