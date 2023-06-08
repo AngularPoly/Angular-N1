@@ -36,17 +36,10 @@ import { ContactComponent } from './component/contact/contact.component';
     AddProductComponent,
     UpdateProductComponent,
     HomePageComponent,
-
     SignupComponent,
-
     ProductDetailComponent,
-<<<<<<< HEAD
     ProductPageComponent,
     ContactComponent
-=======
-    ProductPageComponent
-
->>>>>>> Preview
   ],
   imports: [
     BrowserModule,
