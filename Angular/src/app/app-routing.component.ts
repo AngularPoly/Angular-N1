@@ -12,12 +12,14 @@ import { CategoryAdminComponent } from './component/category-admin/category-admi
 import { AddCategoryComponent } from './component/category-admin/add-category/add-category.component';
 import { EditCategoryComponent } from './component/category-admin/edit-category/edit-category.component';
 import { ProductPageComponent } from './component/product-page/product-page.component';
+import { ContactComponent } from './component/contact/contact.component';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
       { path: "signin", component: SigninComponent },
       { path: "", component: HomePageComponent },
-      { path: "product-page", component: ProductPageComponent }
+      { path: "product-page", component: ProductPageComponent },
+      {path: "contact", component: ContactComponent}
     ]
   },
   {
