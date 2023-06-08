@@ -15,7 +15,12 @@ import { AddProductComponent } from './component/product-admin/add-product/add-p
 import { UpdateProductComponent } from './component/product-admin/update-product/update-product.component';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './component/home-page/home-page.component';
+
 import { SignupComponent } from './layout/signup/signup.component';
+
+import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
+import { ProductPageComponent } from './component/product-page/product-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +35,12 @@ import { SignupComponent } from './layout/signup/signup.component';
     AddProductComponent,
     UpdateProductComponent,
     HomePageComponent,
+
     SignupComponent
+
+    ProductDetailComponent,
+    ProductPageComponent
+
   ],
   imports: [
     BrowserModule,
