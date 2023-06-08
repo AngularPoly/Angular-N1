@@ -15,18 +15,17 @@ import { EditCategoryComponent } from './component/category-admin/edit-category/
 import { SignupComponent } from './layout/signup/signup.component';
 
 import { ProductPageComponent } from './component/product-page/product-page.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
       { path: "signin", component: SigninComponent },
-
       { path: "signup", component: SignupComponent },
       { path: "", component: HomePageComponent },
-
       { path: "", component: HomePageComponent },
-      { path: "product-page", component: ProductPageComponent }
-
+      { path: "product-page", component: ProductPageComponent },
+      {path: "contact", component: ContactComponent}
     ]
   },
   {

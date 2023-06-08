@@ -20,6 +20,7 @@ import { SignupComponent } from './layout/signup/signup.component';
 
 import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
 import { ProductPageComponent } from './component/product-page/product-page.component';
+import { ContactComponent } from './component/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,10 @@ import { ProductPageComponent } from './component/product-page/product-page.comp
     AddProductComponent,
     UpdateProductComponent,
     HomePageComponent,
-
     SignupComponent,
-
     ProductDetailComponent,
-    ProductPageComponent
-
+    ProductPageComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
