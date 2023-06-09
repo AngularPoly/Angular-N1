@@ -14,17 +14,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Trên đường băng</td>
-            <td>Tony buổi sáng</td>
-            <td>2005</td>
-            <td><img src="" alt=""></td>
-            <td>29.000Đ</td>
-            <td>200</td>
-            <td>6/7/2023</td>
+        <tr *ngFor="let product of products;index as i">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.auther}}</td>
+            <td>{{product.published}}</td>
+            <td><img src={{product.image}} alt=""></td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.date}}</td>
             <td>
-                <button class="btn btn-danger">Xóa</button>
+                <button class="btn btn-danger" (click)="onRemove(product._id)">Xóa</button>
                 <button routerLink="update" class="btn btn-warning">Edit</button>
             </td>
         </tr>

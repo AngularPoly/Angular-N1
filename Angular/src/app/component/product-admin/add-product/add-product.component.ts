@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ICategory } from 'src/app/interface/Category';
-import { IProduct } from 'src/app/interface/Product';
-import { ServiceService } from 'src/app/service/service.service';
 import ObjectId from 'bson-objectid';
+import { IProduct } from '../../../interface/Product';
+import { ICategory } from '../../../interface/Category';
+import { ServiceService } from '../../../service/service.service';
+// import { message } from 'ant';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -21,12 +22,16 @@ export class AddProductComponent {
     categoryId: new ObjectId()
   }
   category: ICategory[] = []
+  showSuccessAlert = false;
   constructor(private productService: ServiceService) {
     this.productService.getAllCategory().subscribe((category) => this.category = category)
   }
 
   onHandelSubmit() {
-    this.productService.AddProduct(this.product).subscribe((product) => console.log(product))
+    this.productService.AddProduct(this.product).subscribe((product) => {
+      console.log(product);
+      this.showSuccessAlert = true;
+    });
   }
 
 
