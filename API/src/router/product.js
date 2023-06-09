@@ -6,12 +6,12 @@ import {
   getAllProduct,
   getOneproduct,
 } from "../controler/product";
-import { checkPermission } from "../middlewares/checkPermission";
+// import { checkPermission } from "../middlewares/checkPermission";
 const router = express.Router();
 
-router.post("/products", checkPermission, addProduct);
-router.put("/products/:id", checkPermission, updateProduct);
-router.delete("/products/:id", checkPermission, removeProduct);
+router.post("/products", addProduct);
+router.put("/products/:id", updateProduct);
+router.delete("/products/:id", removeProduct);
 router.get("/products", getAllProduct);
 router.get("/products/:id", getOneproduct);
 
