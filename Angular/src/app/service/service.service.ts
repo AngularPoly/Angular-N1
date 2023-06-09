@@ -30,4 +30,7 @@ export class ServiceService {
   getAllCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://127.0.0.1:8080/api/categorys`)
   }
+  AddCategory(category: ICategory): Observable<ICategory> {
+    return this.http.post<ICategory>(`http://127.0.0.1:8080/api/categorys`, category)
+  }
 }
