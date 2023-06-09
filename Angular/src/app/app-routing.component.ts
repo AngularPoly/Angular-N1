@@ -25,7 +25,7 @@ const routes: Routes = [
       { path: "", component: HomePageComponent },
       { path: "", component: HomePageComponent },
       { path: "product-page", component: ProductPageComponent },
-      {path: "contact", component: ContactComponent}
+      { path: "contact", component: ContactComponent }
     ]
   },
   {
@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "products", component: ProductAdminComponent },
       { path: "products/add", component: AddProductComponent },
-      { path: "products/update", component: UpdateProductComponent },
+      { path: "products/update/:id", component: UpdateProductComponent },
       { path: "categorys", component: CategoryAdminComponent },
       { path: "categoeys/add", component: AddCategoryComponent },
       { path: "categorys/update/:id", component: EditCategoryComponent }
