@@ -33,4 +33,7 @@ export class ServiceService {
   AddCategory(category: ICategory): Observable<ICategory> {
     return this.http.post<ICategory>(`http://127.0.0.1:8080/api/categorys`, category)
   }
+  deleteCategory(_id: any): Observable<ICategory> {
+    return this.http.delete<ICategory>(`http://127.0.0.1:8080/api/categorys/${_id}`)
+  }
 }

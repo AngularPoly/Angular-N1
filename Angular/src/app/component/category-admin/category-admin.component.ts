@@ -14,5 +14,9 @@ export class CategoryAdminComponent {
       this.category = data
     })
   }
-
+  RemoveCategory(_id:any){
+    this.categoryService.deleteCategory(_id).subscribe(()=>{
+      this.category = this.category.filter(item=>item._id!=_id)
+    })
+  }
 }
