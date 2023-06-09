@@ -16,10 +16,16 @@ export class ServiceService {
   getAllProduct(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(`http://127.0.0.1:8080/api/products`)
   }
-
+  getOneProduct(_id: any): Observable<IProduct> {
+    return this.http.get<IProduct>(`http://127.0.0.1:8080/api/products/${_id}`)
+  }
   deleteProduct(_id: any): Observable<IProduct> {
     return this.http.delete<IProduct>(`http://127.0.0.1:8080/api/products/${_id}`)
   }
+  UpdateProduct(product: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(`http://127.0.0.1:8080/api/products/${product._id}`, product)
+  }
+
 
   getAllCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`http://127.0.0.1:8080/api/categorys`)
