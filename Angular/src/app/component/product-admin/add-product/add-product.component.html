@@ -1,5 +1,8 @@
 <h1>Thêm mới sách</h1>
 <form (ngSubmit)="onHandelSubmit()" class="form-group">
+    <div class="alert alert-success" role="alert" *ngIf="showSuccessAlert">
+        Thêm sản phẩm thành công!
+    </div>
     <div class="mb-3">
         <label for=""><b>Tên sách</b></label>
         <input type="text" name="name" class="form-control" [(ngModel)]="product.name">
@@ -42,6 +45,8 @@
             <option *ngFor="let cate of category" value={{cate._id}}>{{ cate.name }}</option>
         </select>
     </div>
+
     <button class="btn btn-primary" type="submit">Thêm mới </button>
+
 
 </form>
