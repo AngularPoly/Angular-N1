@@ -1,7 +1,7 @@
 import ObjectId from 'bson-objectid';
 
 export interface IProduct {
-    _id?: string,
+    _id?: any,
     name: string,
     auther: string,
     published: string,
