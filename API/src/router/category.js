@@ -6,11 +6,11 @@ import {
   getOneCategory,
   updateCategory,
 } from "../controler/category";
-import { checkPermission } from "../middlewares/checkPermission";
+// import { checkPermission } from "../middlewares/checkPermission";
 const router = express.Router();
 router.get("/categorys", getAllCategory);
 router.get("/categorys/:id", getOneCategory);
-router.post("/categorys", checkPermission, addCategory);
-router.delete("/categorys/:id", checkPermission, deleteCategory);
-router.put("/categorys/:id", checkPermission, updateCategory);
+router.post("/categorys", addCategory);
+router.delete("/categorys/:id", deleteCategory);
+router.put("/categorys/:id", updateCategory);
 export default router;
