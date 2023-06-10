@@ -11,7 +11,7 @@ export class AuthserviceService {
   Signup(user: Iuser): Observable<Iuser>{
     return this.http.post<Iuser>(`http://localhost:8080/api/signup`,user)
   }
-  Signin(user: Iuser): Observable<Iuser>{
-    return this.http.post<Iuser>(`http://localhost:8080/api/signin`,user)
+  Signin(user: any): Observable<any>{
+    return this.http.post<any>(`http://localhost:8080/api/signin`,user)
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from 'src/app/interface/Product';
 import { ServiceService } from 'src/app/service/service.service';
-
+import { ICategory } from 'src/app/interface/Category';
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
@@ -20,5 +20,9 @@ export class ProductPageComponent {
       product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+  categorys: ICategory[] = []
+  constructor(private serviceService: ServiceService) {
+    this.serviceService.getAllCategory().subscribe((category: any) => this.categorys = category)
 
+  }
 }
