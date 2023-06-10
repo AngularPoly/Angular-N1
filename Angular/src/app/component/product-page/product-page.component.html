@@ -59,11 +59,13 @@
 
         <div class="col-md-8">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Search">
                 <div class="input-group-append">
-                    <button class="btn btn-success" style="background-color: orange;" type="submit">Go</button>
+                    <button class="btn btn-success" style="background-color: orange;" type="button"
+                        (click)="search()">Go</button>
                 </div>
             </div>
+
 
 
             <hr>
@@ -72,7 +74,7 @@
                     <div class="card h-100">
                         <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Product Name</h5>
+                            <h5 class="card-title">Product 1</h5>
                             <p class="card-text">Product Description</p>
                         </div>
                         <div class="card-footer">
