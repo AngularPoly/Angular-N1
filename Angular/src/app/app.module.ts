@@ -15,7 +15,7 @@ import { AddProductComponent } from './component/product-admin/add-product/add-p
 import { UpdateProductComponent } from './component/product-admin/update-product/update-product.component';
 import { FormsModule } from '@angular/forms';
 import { HomePageComponent } from './component/home-page/home-page.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './layout/signup/signup.component';
 
 import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
@@ -45,7 +45,8 @@ import { ContactComponent } from './component/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
