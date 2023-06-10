@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from 'src/app/service/authservice.service';
-import { ServiceService } from 'src/app/service/service.service';
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,7 +15,7 @@ export class SignupComponent {
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', Validators.required]
   },{validator: this.checkPasswords})
-  constructor( private fb: FormBuilder, private authService: AuthserviceService){}
+  constructor( private fb: FormBuilder, private authService: AuthserviceService, private router :Router){}
   checkPasswords(form: FormGroup){
     const password = form.get('password')?.value;
     const confirmPassword = form.get('confirmPassword')?.value;
@@ -31,7 +32,7 @@ export class SignupComponent {
     }
     this.authService.Signup(this.FormSignup.value).subscribe(data=>{
       console.log(data)
-      alert('WellCome')
+      this.router.navigate(["/signin"])
     })
   }
   
