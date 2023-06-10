@@ -16,7 +16,7 @@ export const getAllCategory = async (req, res) => {
 
 export const getOneCategory = async (req, res) => {
   try {
-    const data = await category.find();
+    const data = await category.findById(req.params.id)
     if (!data) {
       return res.status(400).json({ message: "không có sản phẩm nào" });
     }

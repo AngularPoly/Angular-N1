@@ -1,6 +1,7 @@
-
-<div class="mb-3">
+<form (ngSubmit)="onHandleSubmit()">
+  <div class="mb-3">
     <label for="formGroupExampleInput2" class="form-label">Sửa category</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="name category"> 
+    <input type="text" class="form-control" name="name" [(ngModel)]="category.name" />
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
