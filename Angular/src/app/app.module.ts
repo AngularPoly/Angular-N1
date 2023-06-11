@@ -21,6 +21,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
 import { ProductPageComponent } from './component/product-page/product-page.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { CartComponent } from './component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ContactComponent } from './component/contact/contact.component';
     SignupComponent,
     ProductDetailComponent,
     ProductPageComponent,
-    ContactComponent
+    ContactComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
