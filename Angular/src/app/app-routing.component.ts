@@ -16,20 +16,19 @@ import { SignupComponent } from './layout/signup/signup.component';
 
 import { ProductPageComponent } from './component/product-page/product-page.component';
 import { ContactComponent } from './component/contact/contact.component';
-
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
       { path: "signin", component: SigninComponent },
       { path: "signup", component: SignupComponent },
       { path: "", component: HomePageComponent },
-      { path: "", component: HomePageComponent },
       { path: "product-page", component: ProductPageComponent },
       { path: "contact", component: ContactComponent }
     ]
   },
   {
-    path: "admin", component: AdminComponent, children: [
+    path: "admin", component: AdminComponent, canActivate: [AuthGuard], children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
       { path: "products", component: ProductAdminComponent },
