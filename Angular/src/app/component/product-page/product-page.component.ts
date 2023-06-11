@@ -8,22 +8,33 @@ import { ICategory } from 'src/app/interface/Category';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent {
-  searchTerm = ''; // khai báo và khởi tạo biến searchTerm
+  allProducts: IProduct[] = [];
   searchResult: IProduct[] = [];
-  categorys: ICategory[] = []
+  categorys: ICategory[] = [];
+  searchTerm = ''
   constructor(private productService: ServiceService) {
-    this.productService.getAllProduct().subscribe((product: any) => this.searchResult = product.data)
-    this.productService.getAllCategory().subscribe((category: any) => this.categorys = category)
+    this.productService.getAllProduct().subscribe((product: any) => {
+      this.allProducts = product.data;
+      this.searchResult = this.allProducts;
+    });
+    this.productService.getAllCategory().subscribe((category: any) => this.categorys = category);
   }
 
   search() {
     if (this.searchTerm === "") {
-      window.location.reload() //chờ fix sau
-    }
-    else {
-      this.searchResult = this.searchResult.filter(product =>
+      this.searchResult = this.allProducts;
+    } else {
+      this.searchResult = this.allProducts.filter(product =>
         product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
       );
+    }
+  }
+
+  filterCate(id: any) {
+    if (id === "") {
+      this.searchResult = this.allProducts;
+    } else {
+      this.searchResult = this.allProducts.filter((product) => product.categoryId == id)
     }
   }
 

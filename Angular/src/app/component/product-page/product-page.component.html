@@ -4,8 +4,7 @@
             <h4>Product Categories</h4>
             <hr>
             <ul class="list-group" *ngFor="let cate of categorys">
-                <li class="list-group-item">{{cate.name}}</li>
-
+                <li class="list-group-item" (click)="filterCate(cate._id)"><a>{{cate.name}}</a></li>
             </ul>
             <h4>sản phẩm nổi bật</h4>
             <hr>
