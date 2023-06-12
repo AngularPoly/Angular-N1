@@ -18,6 +18,7 @@ import { ProductPageComponent } from './component/product-page/product-page.comp
 import { ContactComponent } from './component/contact/contact.component';
 import { AuthGuard } from './auth.guard';
 import { CartComponent } from './component/cart/cart.component';
+import { ProductDetailComponent } from './layout/client/product-detail/product-detail.component';
 const routes: Routes = [
   {
     path: "", component: ClientComponent, children: [
@@ -26,7 +27,7 @@ const routes: Routes = [
       { path: "", component: HomePageComponent },
       { path: "product-page", component: ProductPageComponent },
       { path: "contact", component: ContactComponent },
-      { path: "cart", component: CartComponent }
+      {path: "product-page/cart/:id", component:CartComponent}
     ]
   },
   {
