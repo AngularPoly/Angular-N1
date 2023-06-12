@@ -3,6 +3,7 @@ import ObjectId from 'bson-objectid';
 import { IProduct } from '../../../interface/Product';
 import { ICategory } from '../../../interface/Category';
 import { ServiceService } from '../../../service/service.service';
+import { Router } from '@angular/router';
 // import { message } from 'ant';
 @Component({
   selector: 'app-add-product',
@@ -23,7 +24,8 @@ export class AddProductComponent {
   }
   category: ICategory[] = []
   showSuccessAlert = false;
-  constructor(private productService: ServiceService) {
+  constructor(private productService: ServiceService,
+    private router: Router) {
     this.productService.getAllCategory().subscribe((category) => this.category = category)
   }
 
@@ -31,6 +33,8 @@ export class AddProductComponent {
     this.productService.AddProduct(this.product).subscribe((product) => {
       console.log(product);
       this.showSuccessAlert = true;
+      alert("Thêm sản phâm thành công")
+      this.router.navigate(["admin/products"])
     });
   }
 
