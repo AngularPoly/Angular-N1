@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../interface/Product';
 import { ServiceService } from '../../service/service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ProductAdminComponent {
   products: IProduct[] = []
   searchResult: IProduct[] = [];
   searchTerm = ""
-  constructor(private productService: ServiceService) {
+  constructor(private productService: ServiceService, private route : Router) {
     this.productService.getAllProduct().subscribe((product: any) => {
       this.products = product.data
       this.searchResult = this.products
@@ -31,6 +32,9 @@ export class ProductAdminComponent {
   onRemove(_id: any) {
     if (confirm("bạn có muốn xoá sản phẩm này không")) {
       this.productService.deleteProduct(_id).subscribe(() => this.products = this.products.filter((item) => item._id != _id))
+      alert("Xóa sản phẩm thành công")
+      window.location.reload()
     }
+   
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ICategory } from 'src/app/interface/Category';
 import { ServiceService } from 'src/app/service/service.service';
 
@@ -11,10 +12,13 @@ export class AddCategoryComponent {
   category: ICategory ={
     name : ""
   }
-  constructor(private categoryService: ServiceService) {}
+  constructor(private categoryService: ServiceService,
+    private router: Router) {}
   onHandleSubmit(){
     this.categoryService.AddCategory(this.category).subscribe(category=>{
-      console.log(this.category);
+      console.log(category);
+      alert("Thêm danh mục thành công")
+      this.router.navigate(['/admin/categorys'])
     })
   }
 }
