@@ -40,10 +40,10 @@
         <div class="input-group-append">
             <label class="input-group-text" for="inputGroupSelect02">Danh mục</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect02">
-            <option selected>Danh mục</option>
-            <option *ngFor="let cate of category" value={{cate._id}}>{{ cate.name }}</option>
+        <select (change)="onCategoryChange($event)">
+            <option *ngFor="let cate of category" value="{{cate._id}}">{{cate.name}}</option>
         </select>
+
     </div>
 
     <button class="btn btn-primary" type="submit">Thêm mới </button>

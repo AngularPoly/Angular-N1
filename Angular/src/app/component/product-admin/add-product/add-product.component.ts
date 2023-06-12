@@ -28,7 +28,9 @@ export class AddProductComponent {
     private router: Router) {
     this.productService.getAllCategory().subscribe((category) => this.category = category)
   }
-
+  onCategoryChange(event: any) {
+    this.product.categoryId = event.target.value;
+  }
   onHandelSubmit() {
     this.productService.AddProduct(this.product).subscribe((product) => {
       console.log(product);
@@ -37,6 +39,4 @@ export class AddProductComponent {
       this.router.navigate(["admin/products"])
     });
   }
-
-
 }
