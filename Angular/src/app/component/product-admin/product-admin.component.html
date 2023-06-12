@@ -33,8 +33,8 @@
             <td>{{product.quantity}}</td>
             <td>{{product.date}}</td>
             <td>
-                <button class="btn btn-danger" (click)="onRemove(product._id)">Xóa</button>
-                <button routerLink="update" class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger m-1" (click)="onRemove(product._id)">Xóa</button>
+                <button routerLink="update/{{product._id}}" class="btn btn-warning">Edit</button>
             </td>
         </tr>
     </tbody>
