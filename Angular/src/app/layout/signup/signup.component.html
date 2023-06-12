@@ -12,7 +12,7 @@
               <div *ngIf="
                 FormSignup.get('username')?.hasError('required') &&
                 (FormSignup.get('username')?.touched || FormSignup.get('username')?.dirty)
-              ">
+              " style="color: red;">
                 Name is required
               </div>
             </div>
@@ -23,30 +23,30 @@
               <div *ngIf="
                   FormSignup.get('email')?.hasError('required') &&
                   (FormSignup.get('email')?.touched || FormSignup.get('email')?.dirty)
-                ">
+                " style="color: red;">
                 Email is required
               </div>
               <div *ngIf="
                   FormSignup.get('email')?.hasError('email') &&
                   (FormSignup.get('email')?.touched || FormSignup.get('email')?.dirty)
-                ">
+                " style="color: red;">
                 Email không hợp lệ
               </div>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" formControlName="password"
-                placeholder="Password">
+                placeholder="Password" style="color: red;">
               <div *ngIf="
                 FormSignup.get('password')?.hasError('required') &&
                 (FormSignup.get('password')?.touched || FormSignup.get('password')?.dirty)
-              ">
+              " style="color: red;">
                 Password is required
               </div>
               <div *ngIf="
                 FormSignup.get('password')?.hasError('minlength') &&
                 (FormSignup.get('password')?.touched || FormSignup.get('password')?.dirty)
-              ">
+              " style="color: red;">
                 Mật khẩu phải có ít nhất 6 ký tự
               </div>
             </div>
@@ -59,7 +59,7 @@
                   FormSignup?.hasError('passwordNotMatch') &&
                   (FormSignup.get('confirmPassword')?.touched ||
                     FormSignup.get('confirmPassword')?.dirty)
-                ">
+                " style="color: red;">
                 Mật khẩu không trùng
               </div>
             </div>

@@ -12,13 +12,13 @@
               <div *ngIf="
           formSignin.get('email')?.hasError('required') &&
           (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
-        ">
+        " style="color: red;">
                 Email is required
               </div>
               <div *ngIf="
           formSignin.get('email')?.hasError('email') &&
           (formSignin.get('email')?.touched || formSignin.get('email')?.dirty)
-        ">
+        " style="color: red;">
                 Email không hợp lệ
               </div>
             </div>
@@ -29,13 +29,13 @@
               <div *ngIf="
         formSignin.get('password')?.hasError('required') &&
         (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)
-      ">
+      " style="color: red;">
                 Password is required
               </div>
               <div *ngIf="
         formSignin.get('password')?.hasError('minlength') &&
         (formSignin.get('password')?.touched || formSignin.get('password')?.dirty)
-      ">
+      " style="color: red;">
                 Mật khẩu phải có ít nhất 6 ký tự
               </div>
               <br>

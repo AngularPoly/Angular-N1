@@ -10,13 +10,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cart of newCart">
-                <td>{{cart.name}}</td>
-                <td>{{cart.price}}.đ</td>
-                <td><input id="quanti" type="number"></td>
-                <td>{{cart.price }}.đ</td>
+            <tr *ngFor="let data of cartItems">
+                <td>{{ data.name }}</td>
+                <td>{{ data.price }}</td>
+                <td><input type="number" id="quanti" [(ngModel)]="data.quantity"></td>
+                <td>{{ data.price * data.quantity }}đ</td>
             </tr>
         </tbody>
+
     </table>
     <div style="margin-left: 500px">
         <button class="btn" style="background-color: orange;">Tiếp tục mua hàng</button>
