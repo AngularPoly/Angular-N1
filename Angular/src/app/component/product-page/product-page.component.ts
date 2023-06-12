@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IProduct } from 'src/app/interface/Product';
 import { ServiceService } from 'src/app/service/service.service';
 import { ICategory } from 'src/app/interface/Category';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product-page',
   templateUrl: './product-page.component.html',
@@ -37,5 +38,4 @@ export class ProductPageComponent {
       this.searchResult = this.allProducts.filter((product) => product.categoryId == id)
     }
   }
-
 }

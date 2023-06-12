@@ -10,17 +10,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Sản phẩm 1</td>
-                <td>100.000đ</td>
-                <td><input type="number"></td>
-                <td>0đ</td>
-            </tr>
-            <tr>
-                <td>Sản phẩm 2</td>
-                <td>200.000đ</td>
-                <td><input type="number"></td>
-                <td>0đ</td>
+            <tr *ngFor="let cart of newCart">
+                <td>{{cart.name}}</td>
+                <td>{{cart.price}}.đ</td>
+                <td><input id="quanti" type="number"></td>
+                <td>{{cart.price }}.đ</td>
             </tr>
         </tbody>
     </table>

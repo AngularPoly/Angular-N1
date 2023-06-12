@@ -10,5 +10,5 @@ export interface IProduct {
     price: number,
     quantity: number,
     date: string,
-    categoryId: ObjectId
+    categoryId?: ObjectId
 }
