@@ -31,8 +31,8 @@ export class ServiceService {
   getAllCategory(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(`${this.API_URL}/categorys`)
   }
-  AddCategory(category: ICategory): Observable<ICategory> {
-    return this.http.post<ICategory>(`${this.API_URL}/categorys`, category)
+  AddCategory(category: any): Observable<any> {
+    return this.http.post<any>(`${this.API_URL}/categorys`, category)
   }
   deleteCategory(_id: any): Observable<ICategory> {
     return this.http.delete<ICategory>(`${this.API_URL}/categorys/${_id}`)
