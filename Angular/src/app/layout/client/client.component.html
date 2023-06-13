@@ -22,13 +22,17 @@
         <div style="margin-top: -30px; margin-left: 300px;">
             <ng-container *ngIf="!ischeck; else loggedOut">
                 <p>
-                    <button routerLink="signup" style="margin-right: 10px;" id="signup" class="btn btn-primary">Đăng
+                    <button routerLink="signup" style="margin-right: 10px; background-color: orange; " id="signup"
+                        class="btn btn-primary">Đăng
                         ký</button>
-                    <button routerLink="signin" class="btn btn-primary" id="signin">Đăng nhập</button>
+                    <button routerLink="signin" style="background-color: orange;" class="btn btn-primary"
+                        id="signin">Đăng
+                        nhập</button>
                 </p>
             </ng-container>
             <ng-template #loggedOut>
-                <button (click)="logout()" style="margin-right: 10px;" class="btn btn-primary">Logout</button>
+                <button (click)="logout()" style="margin-right: 10px; color: orange;"
+                    class="btn btn-primary">Logout</button>
             </ng-template>
         </div>
 
