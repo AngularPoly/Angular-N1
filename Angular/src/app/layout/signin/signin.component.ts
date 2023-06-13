@@ -19,7 +19,14 @@ export class SigninComponent {
     }
     this.authService.Signin(this.formSignin.value).subscribe(data=>{
       localStorage.setItem('userInfo', JSON.stringify(data))
-      this.router.navigate(["/"])
+      console.log(data)
+      if(data.user.role=="admin"){
+        this.router.navigate(["/admin"])
+      }
+      if(data.user.role!="admin"){
+        this.router.navigate(["/"])
+      }
+      // this.router.navigate(["/"])
       alert("Wellcome")
     })
    }
